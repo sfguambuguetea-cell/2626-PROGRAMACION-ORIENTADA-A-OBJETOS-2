@@ -1,18 +1,19 @@
 
 
- #Programa: Sistema de Cuenta Bancaria
-# Autor: Segundo Fabian Gambuguete
+# ==================================================
+# Programa: Sistema de Cuenta Bancaria
+# Autor: Segundo Fabian
 # Descripción: Aplicación de Programación Orientada
 # a Objetos en Python
+# ==================================================
 
-
-
+# -------------------------------
 # Clase Base: CuentaBancaria
-
+# -------------------------------
 class CuentaBancaria:
     """
     Clase que representa una cuenta bancaria general.
-    Aplica Encapsulación al proteger el saldo.
+    Aplica encapsulación al proteger el saldo.
     """
 
     def __init__(self, titular, saldo_inicial):
@@ -42,16 +43,16 @@ class CuentaBancaria:
     def mostrar_informacion(self):
         """
         Método que muestra la información básica
-        Este método será  (polimorfismo)
+        Este método será sobrescrito (polimorfismo)
         """
         print("=== Información de la Cuenta ===")
         print(f"Titular: {self.titular}")
         print(f"Saldo: ${self.__saldo}")
 
 
-# HERENCIA
+# -------------------------------
 # Clase Derivada: CuentaAhorro
-
+# -------------------------------
 class CuentaAhorro(CuentaBancaria):
     """
     Clase que representa una cuenta de ahorro.
@@ -72,19 +73,19 @@ class CuentaAhorro(CuentaBancaria):
         print(f"Tasa de interés: {self.tasa_interes}%")
 
 
-
+# -------------------------------
 # Programa Principal
-
+# -------------------------------
 
 # Creación de un objeto de la clase base
-cuenta_normal = CuentaBancaria(" Agustin Gomez", 1000)
+cuenta_normal = CuentaBancaria("Carlos Gómez", 1000)
 cuenta_normal.depositar(500)
 cuenta_normal.retirar(200)
 cuenta_normal.mostrar_informacion()
 
-print(" ")
+print("----------------------------------")
 
 # Creación de un objeto de la clase derivada
-cuenta_ahorro = CuentaAhorro("Fabian Guambuguete", 2000, 4.5)
+cuenta_ahorro = CuentaAhorro("Ana Martínez", 2000, 4.5)
 cuenta_ahorro.depositar(800)
 cuenta_ahorro.mostrar_informacion()
